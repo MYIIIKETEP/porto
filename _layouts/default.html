@@ -1,27 +1,15 @@
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: "en-US" }}">
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <title>{{ page.title }} - {{ site.title }}</title>
     <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
+    <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'>
   </head>
+  {% include nav.html %}
   <body>
-   <div class="nav">
-      <a href="/"><img id="mainLogo" src="../assets/images/MyLogo.png"></a>
-    <ul class="from-inline"> 
-      <li>
-        <a href="/wow.html"><img src="../assets/images/WoW.png"></a>
-        <a href="/bdo.html"><img src="../assets/images/BDO.png"></a>
-        <a href="/about.html"><img src="../assets/images/JS.png"></a>
-        <a href="/contact.html"><img src="../assets/images/phonr.png"></a>
-      </li>
-    </ul>
-  </div>
-  
     {{ content}}
- 
-
   </body>
 
 

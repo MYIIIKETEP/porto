@@ -1,77 +1,83 @@
+@import "nav.scss";
 
-@import "slider.scss";
 
 
-$bodyFont: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-$borderSVG: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='50' height='50'><defs><linearGradient id='redgradient'><stop offset='0' stop-color='%23FFC14D'/><stop offset='0.362' stop-color='%23FF4834'/><stop offset='1' stop-color='%233B0300'/></linearGradient></defs><g id='Layer_1'><path d='M0,0 L50,0 L50,50 L0,50 L0,0 z' fill='url(%23redgradient)' width='100%' height='100%'/></g></svg>") 10% stretch;
-* {
-  margin: 0;
+$backgroundColor: #ffffff;
+$bodyColor: #000000;
+
+*
+{
+  margin:0;
   padding: 0;
+  
 }
 body {
- 
-  font-family: $bodyFont;
-  font-size: 26px;
+  background-image: url("../images/Space.jpg");
+  background-position: center;
+  background-repeat:inherit;
+  color: $bodyColor;
+  font-family: 'Abel';font-size: 22px;
   color:white;
-  background:
-radial-gradient(black 15%, transparent 16%) 0 0,
-radial-gradient(black 15%, transparent 16%) 8px 8px,
-radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
-radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
-background-color:gray;
-background-size:16px 16px;
-}
-
-
-.nav {
-  position: relative;
-  opacity: 1;
-  height: 85px;
-  width: 100%;
-  border: 10px solid white;
-  border-bottom: 0px;
-  border-image: $borderSVG;
-  #mainLogo{
-    position: relative;
-    top:0px;
-    height: 100%;
-
-  }
-  ul {
-    list-style: none;
-    float:right;
-    position: relative;
-    top:15px;
-    li{
-      margin-right: 15px;
-     a{
-      color:red;
+  animation: floatingBkg 60s infinite;
   
-      img{
-        height: 50px;
-        width: 50px;
-        transition: transform .8s ease-in-out;
+}
+.Main-Container{
+      position: relative;
+      top:70px;
+      margin-right: 17%;
+      margin-left: 17%;
+
+      .div-link1{
+        display:block;
+        height: 250px;
+        width: 100%;
+        background-color:black;
+        text-decoration: none;
+        img{
+          height: 100%;
+          float:left;
+        }
+           p{
+            float: right;
+             color:white;
+             margin-right:13%;
+             margin-top:7%;
+           }
       }
-      img:hover{
-        transform: rotate(360deg);
+
+    }
+
+@media only screen and (max-width: 768px) {
+  body {
+    background-color: lightblue;
+    .test2{
+      float:none;
+    }
+    .Main-Container{
+      top:30px;
+      margin-right: 2%;
+      margin-left: 2%;
+    }
+    .div-link1{
+      p{
+        position: relative;
+        font-size: 15px;
+        margin-right: 0%;
+        
       }
-     }
     }
   }
 }
 
-.tbody {
-  margin-left: 15%;
-  margin-right: 15%;
-  width: 70%;
-  height: 500px;
-  border: 10px solid white;
-  border-top: 0px;
-  border-image: $borderSVG;
-  .right{
-    float:right;
-  }
-  .left{
-      float:left;
-  }
+
+
+
+
+
+//Background animation
+@keyframes floatingBkg{
+  25%{background-position: right};
+  50%{background-position: top};
+  75%{background-position: left};
+  100%{background-position: center};
 }
